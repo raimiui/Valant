@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 using Valant.Model;
 using Valant.Services.Interfaces;
 
@@ -20,9 +22,10 @@ namespace Valant.WebApi.Controllers
         }
 
         [HttpPost]
-        public void Add(Inventory item)
+        public HttpResponseMessage Add(Inventory item)
         {
             _inventoryService.Save(item);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }
