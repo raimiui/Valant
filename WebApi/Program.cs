@@ -18,7 +18,7 @@ namespace Valant.WebApi
             };
 
             config.Routes.MapHttpRoute(
-                "API Default", "api/{controller}/{id}",
+                "API Default", "api/{controller}/{action}/{id}",
                 new { id = RouteParameter.Optional });
 
             using (var server = new HttpSelfHostServer(config))

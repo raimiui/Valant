@@ -13,11 +13,13 @@ namespace Valant.WebApi.Controllers
             _inventoryService = inventoryService;
         }
 
+        [HttpGet]
         public Inventory TakeOutByLabel(string label)
         {
             return _inventoryService.TakeOutByLabel(label);
         }
 
+        [HttpPost]
         public void Add(Inventory item)
         {
             _inventoryService.Save(item);
